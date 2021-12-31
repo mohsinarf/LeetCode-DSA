@@ -9,17 +9,14 @@ int binarySearch(vector<int> array, int target) {
 	
 	int index = -1;
 	
-	while (right_node>=left_node)
-	{
+	while (right_node>=left_node){
 		if( array[mid_node]==target)
 			return mid_node;
-		else if (target>array[mid_node])
-		{
+		else if (target>array[mid_node]){
 			left_node = mid_node + 1;
 			mid_node = (right_node + left_node)/2;
 		}
-		else{
-						
+		else{		
 			right_node = mid_node - 1;
 			mid_node = (right_node + left_node)/2;
 		}
