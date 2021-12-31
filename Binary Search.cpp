@@ -5,7 +5,7 @@ int binarySearch(vector<int> array, int target) {
   // Write your code here.
 	int left_node = 0;
 	int right_node = array.size()-1;
-	int mid_node = (right_node - left_node)/2;
+	int mid_node = (right_node + left_node)/2;
 	
 	int index = -1;
 	
