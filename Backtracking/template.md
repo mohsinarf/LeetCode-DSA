@@ -13,11 +13,19 @@ vector<int> getCandidates(const unordered_set<int>& state) {
     return {};  // Placeholder, replace with actual implementation
 }
 
+bool isSolutionPossible(const unordered_set<int>& state){
+    return true;
+}
+
 // Backtracking function
 void backtrack(unordered_set<int>& state, vector<unordered_set<int>>& solutions) {
     if (isValidState(state)) {
         solutions.push_back(state);
         // return;  // Uncomment this line if you want to stop at the first solution
+    }
+    
+    if(!isSolutionPossible()){
+    	return;
     }
 
     for (int candidate : getCandidates(state)) {
