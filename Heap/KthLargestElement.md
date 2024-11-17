@@ -1,25 +1,20 @@
 
 ```
-class KthLargest {
+class Solution {
 public:
-    KthLargest(int k, vector<int>& nums) {
-        minHeap = std::priority_queue<int, vector<int>, greater<int>>(nums.begin(), nums.end());
-        kthNumber = k;
+    int findKthLargest(vector<int>& nums, int k) 
+    {
+        std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;
 
-        while(minHeap.size()>kthNumber)
-            minHeap.pop();
-    }
-    
-    int add(int val) {
-        minHeap.push(val);
+        for (int num : nums) {
+            minHeap.push(num);
 
-        if(minHeap.size()>kthNumber)
-        minHeap.pop();
-
+            if (minHeap.size() > k) {
+                minHeap.pop();
+            }
+        }
+        
         return minHeap.top();
     }
-private:
-    std::priority_queue<int, vector<int>, greater<int>> minHeap;
-    int kthNumber;
 };
 ```
